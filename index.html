@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div id="lists-section">
+            <h2>Your Lists</h2>
+            <ul id="lists"></ul>
+            <form id="new-list-form">
+                <input type="text" id="new-list-input" placeholder="New list name" required>
+                <button type="submit">Add List</button>
+            </form>
+        </div>
+
+        <div id="todo-section">
+            <h2 id="list-title">List Title</h2>
+            <button id="back-to-lists" style="display:none;">← Back to Lists</button>
+            <ul id="todo-items"></ul>
+            <form id="new-item-form">
+                <input type="text" id="new-item-input" placeholder="New task..." required>
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

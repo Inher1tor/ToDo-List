@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+#app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    background: #fff;
+    min-width: 300px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#lists-section, #todo-section {
+    width: 100%;
+}
+
+#lists,
+#todo-items {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1rem;
+}
+
+    #lists li,
+    #todo-items li {
+        padding: 5px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #eee;
+        word-break: break-word;
+        flex-wrap: wrap;
+    }
+
+        #lists li.active {
+            background-color: #d0f0d0;
+            font-weight: bold;
+        }
+
+form {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 6px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    min-width: 0;
+    resize: none;
+    font-size: 14px;
+    max-width: 100%;
+}
+
+    input[type="text"]:focus {
+        outline: 2px solid #007acc;
+    }
+
+button {
+    padding: 6px 10px;
+    border: none;
+    background-color: #007acc;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #005fa3;
+    }
+
+.edit-btn,
+.delete-btn {
+    padding: 3px 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+    .edit-btn:hover,
+    .delete-btn:hover {
+        color: red;
+    }
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+    word-break: break-word;
+    max-width: 100%;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    #lists-section, #todo-section {
+        max-height: none;
+    }
+}
+
+/*List on-hover*/
+#lists li:hover {
+    background-color: #b200ff;
+}
+
+#back-to-lists {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: #762222;
+    cursor: pointer;
+    display: none; /* hide by default, shown only when in task view */
+    z-index: 1000;
+}
+
+#back-to-lists:hover {
+    background-color: gray;
+}
